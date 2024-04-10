@@ -1,8 +1,8 @@
 const express = require("express");
 const User = require("../models/user");
-const bcryptjs = require("bcryptjs");
+const bcryptjs = require("bcryptjs"); //hashing. compares sign in password with ones database
 const authRouter = express.Router();
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken"); //Authenticates user data
 const auth = require("../middlewares/auth");
 
 // SIGN UP
@@ -32,7 +32,6 @@ authRouter.post("/api/signup", async (req, res) => {
 });
 
 // Sign In Route
-// Exercise
 authRouter.post("/api/signin", async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -51,6 +50,10 @@ authRouter.post("/api/signin", async (req, res) => {
 
     const token = jwt.sign({ id: user._id }, "passwordKey");
     res.json({ token, ...user._doc });
+    // {
+    // 'name': 'John Doe',
+    // 'email':'john@gmail.com'
+    // }
   } catch (e) {
     res.status(500).json({ error: e.message });
   }

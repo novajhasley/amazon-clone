@@ -68,12 +68,13 @@ class _AuthScreenState extends State<AuthScreen> {
                   fontWeight: FontWeight.w500,
                 ),
               ),
+              //SIGN UP RADIO BUTTON
               ListTile(
                 tileColor: _auth == Auth.signup
                     ? GlobalVariables.backgroundColor
                     : GlobalVariables.greyBackgroundCOlor,
                 title: const Text(
-                  'Create Account',
+                  'Sign Up',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
@@ -89,8 +90,8 @@ class _AuthScreenState extends State<AuthScreen> {
                   },
                 ),
               ),
-              //SIGN UP FORM
               if (_auth == Auth.signup)
+                //SIGN UP FORM
                 Container(
                   padding: const EdgeInsets.all(8),
                   color: GlobalVariables.backgroundColor,
@@ -125,6 +126,7 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                   ),
                 ),
+              //SIGN IN RADIO BUTTON
               ListTile(
                 tileColor: _auth == Auth.signin
                     ? GlobalVariables.backgroundColor
@@ -147,6 +149,7 @@ class _AuthScreenState extends State<AuthScreen> {
                 ),
               ),
               if (_auth == Auth.signin)
+                //SIGN IN FORM
                 Container(
                   padding: const EdgeInsets.all(8),
                   color: GlobalVariables.backgroundColor,
